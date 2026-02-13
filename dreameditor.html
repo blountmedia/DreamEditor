@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<!-- app information -->
+<title>DreamEditor</title>
+<head>
+<meta name="description" content="Code editor">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png"/>
+<!-- cmengine -->
+<script src="dreameditorservices/1.js"></script>
+<link rel="stylesheet" href="dreameditorservices/2.css">
+<!-- syntax modes -->
+<script src="dreameditorservices/xml.js"></script>
+<script src="dreameditorservices/javascript.js"></script>
+<script src="dreameditorservices/css.js"></script>
+<script src="dreameditorservices/python.js"></script>
+<script src="dreameditorservices/php.js"></script>
+<script src="dreameditorservices/clike.js"></script>
+<script src="dreameditorservices/shell.js"></script>
+<script src="dreameditorservices/powershell.js"></script>
+<script src="dreameditorservices/vb.js"></script>
+<script src="dreameditorservices/vbscript.js"></script>
+<script src="dreameditorservices/swift.js"></script>
+<script src="dreameditorservices/go.js"></script>
+<script src="dreameditorservices/sql.js"></script>
+<script src="dreameditorservices/coffeescript.js"></script>
+<script src="dreameditorservices/livescript.js"></script>
+<script src="dreameditorservices/lua.js"></script>
+<script src="dreameditorservices/xquery.js"></script>
+<script src="dreameditorservices/ruby.js"></script>
+<!-- theme services -->
+<link rel="stylesheet" href="dreameditorservices/nord.css">
+<link rel="stylesheet" href="dreameditorservices/material-palenight.css">
+<script src="dreameditorservices/activeline.js"></script>
+</head>
+<!-- HTML UI -->
+<body id="dreameditorwindow">
+<section id="navbar">
+<div class="dropdown">
+<button class="buttoncontroller" id="navbtn"><img src="dreameditorengine/dreameditorui/options.png" alt="filemenu" height="44" width="44"></button>
+<p id="navlogo" style="float:right;"><img src="icon.png" alt="dreameditor.org" height="20" width="20"> DreamEditor </p>
+<div id="dropdownmenu" class="dropdown-options">
+<br><input id="localfile" type="file"/><h5>Loading file will clear workspace.</h5><br>
+<a id="saveb" href="#"><img src="dreameditorengine/dreameditorui/save.png" alt="save" height="24" width="24"> Save file as</a><br><br>
+<a id="clearb" href="#"><img src="dreameditorengine/dreameditorui/clear.png" alt="clear" height="24" width="24"> Clear Editor</a><br><br>
+
+<a id="aboutb" href="#"><img src="dreameditorengine/dreameditorui/blountmediaicon.png" alt="about" height="24" width="24"> About DreamEditor</a><br>
+<a id="orgb" href="https://dreameditor.org"><img src="icon.png" alt="dreameditor.org" height="24" width="24"> <b>dreameditor.org</b></a>
+<br>
+
+<!-- Settings UI -->
+<div class="dropdown2">
+<div><a id="settingsb" href="#"><img src="dreameditorengine/dreameditorui/settings.png" alt="settings" height="24" width="24"> Settings</a></div>
+<div id="dropdownmenu2" class="dropdown-options2">
+<img src="dreameditorengine/dreameditorui/webpagedark.png" alt="darkmode" height="24" width="24"> Dark Mode
+<a id="darkmodeonb" href="#">On</a><a id="darkmodeoffb" href="#">Off</a>
+<hr>
+<img src="dreameditorengine/dreameditorui/activeline.png" alt="activeline" height="24" width="24"> Highlight Active Line
+<a id="highlightonb" href="#">On</a>
+<a id="highlightoffb" href="#">Off</a>
+<hr>
+<img src="dreameditorengine/dreameditorui/linenumbers.png" alt="linenumbers" height="24" width="24"> Line Numbers
+<a id="linenumbersonb" href="#">On</a>
+<a id="linenumbersoffb" href="#">Off</a>
+<hr>
+<img src="dreameditorengine/dreameditorui/syntaxmode.png" alt="syntaxmode" height="24" width="24"> Syntax Mode: <b id="syntaxmodestatus"></b>
+<hr>
+<div class="dropdown3">
+<div><a id="syntaxb" href="#"><img src="dreameditorengine/dreameditorui/settings.png" alt="syntaxsettings" height="24" width="24"> Syntax Options</a></div>
+<div id="dropdownmenu3" class="dropdown-options3">
+Select Syntax Mode
+<!-- syntax_mode list -->
+<a id="textb" href="#">text</a>
+<a id="htmlb" href="#">html</a> 
+<a id="cssb" href="#">css</a> 
+<a id="javascriptb" href="#">javascript</a>
+<a id="phpb" href="#">php</a> 
+<a id="sqlb" href="#">sql</a>
+<a id="pythonb" href="#">python</a> 
+<a id="cb" href="#">c</a>
+<a id="cplusplusb" href="#">c++</a>
+<a id="csharpb" href="#">c#</a>
+<a id="objectivecb" href="#">objective-c</a>
+<a id="javab" href="#">java</a> 
+<a id="shellb" href="#">shell</a> 
+<a id="powershellb" href="#">powershell</a>
+<a id="pearlb" href="#">pearl</a> 
+<a id="rustb" href="#">rust</a>
+<a id="rubyb" href="#">ruby</a>
+<a id="luab" href="#">lua</a> 
+<a id="swiftb" href="#">swift</a> 
+<a id="gob" href="#">go</a>
+<a id="xqueryb" href="#">xquery</a>
+<a id="vbnetb" href="#">vbnet</a> 
+<a id="vbscriptb" href="#">vbscript</a>
+<a id="coffescriptb" href="#">coffeescript</a> 
+<a id="livescriptb" href="#">livescript</a><br>
+<hr>
+</div></div>
+<hr>
+<a id="resetb" href="#"><img src="dreameditorengine/dreameditorui/resetsettings.png" alt="reset" height="24" width="24"> Reset All Settings</a>
+<hr>
+</div></div>
+<br><br>
+</div></div>
+</section>
+<!-- javascript error prompt -->
+<noscript>DreamEditor Error 606: dreameditor.js services could not start. JavaScript is disabled or not accessible. Enable JavaScript or try another web browser.</noscript>
+<br>
+<!-- workspace -->
+<section id="editorcanvas">
+<script src="dreameditorengine/dreameditor.js"></script>
+<link id="themesettings" rel="stylesheet" href="dreameditorengine/theme1.css">
+<script src="dreameditorengine/datasettings.js"></script>
+</section>
+</body>
+</html>
