@@ -98,7 +98,7 @@ function clearuserdata() {
 }}
 // about_prompt
 function aboutde() {
-  alert("DreamEditor open source version 6.0.2 Created & hosted by blountmedia.net | For patch notes or more information visit dreameditor.org");
+  alert("DreamEditor open source version 6.1.0 Created & hosted by blountmedia.net | For patch notes or more information visit dreameditor.org");
 }
 // theme_controller
 function themecontrollerdarkon() {
