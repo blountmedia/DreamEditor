@@ -1,8 +1,8 @@
 // dreameditor.js localStorage data
 console.log("dreameditor.js:/>_ loading session settings.");
 localStorage.setItem("appname", "DreamEditor")
-localStorage.setItem("appversion", "6.0.2")
-localStorage.setItem("patchdate", "2-12-26")
+localStorage.setItem("appversion", "6.1.0")
+localStorage.setItem("patchdate", "8-8-26")
 // user localStorage_settings
 function userthemesettings(){
   console.log("Checking website localstorage for user theme settings");
